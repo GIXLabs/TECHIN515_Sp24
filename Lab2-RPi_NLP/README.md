@@ -213,7 +213,8 @@ python voice_assistant.py 2>/dev/null
 
 * Connect a 2nd LED to your Relay and edit the code so that you can control both LEDs with speech command. You should be able to Turn on/ Turn off both LED's independently with speech command.
 * You can use a breadboard to distribute the power source from the Raspberry Pi to the LEDs.
-* _Hint: Build two new functions to Turn on/ Turn off the 2nd LED, and call them in your while loop_
+ _Hint: Build two new functions to Turn on/ Turn off the 2nd LED, and call them in your while loop_
+* Try to run the python script without the 2>/dev/null extension (try: python voice_assistant.py) and note what you see. Does it impact the output?
 
 ### Takeaways from this lab experiment
 
