@@ -2,7 +2,7 @@
 This is a lab experiment designed as part of TECHIN 515 - Hardware Software Lab 2.
 
 ## Objective
-In this lab, we will learn how to uae a Raspberry Pi 5 to create a smart home voice assistant using natural langrauge processing to turn lights on and off. Optionally, we will also use a voice assistant powered by ChatGPT, a state-of-the-art language model developed by OpenAI. We will configure a Raspberry Pi with the necessary hardware and software components and utilize OpenAI's Application programming interface (API) to enable conversational interactions. 
+In this lab, we will learn how to use a Raspberry Pi 5 to create a smart home voice assistant using natural langrauge processing to turn lights on and off. Optionally, we will also use a voice assistant powered by ChatGPT, a state-of-the-art language model developed by OpenAI. We will configure a Raspberry Pi with the necessary hardware and software components and utilize OpenAI's Application programming interface (API) to enable conversational interactions. 
 
 ## Hardware
 1.	Raspberry Pi 5
