@@ -36,7 +36,7 @@ In this lab, we will learn how to use a Raspberry Pi 5 to create a smart home vo
 <img src="https://github.com/mehrab-abrar/Raspberry-Pi-Voice-Assistant/assets/42034831/7d5a5a54-017c-443a-bcfb-a482eb1f6721" alt="Screenshot 2024-04-09 003602" width="400"><br>
 <br>
 
-* You can skip the WiFi settings if you are using a monitor. Uncheck the configure WiFi option. You can connect your Raspberry Pi with WiFi network once you have your OS installed.
+* Keep the WiFi configure option checked. Use WiFi network of University of Washington and you can proceed without putting any password. You will be able to connect your Raspberry Pi with WiFi network once you have your OS installed.
 
 * Continue writing the OS into the MicroSD card and wait for the process to complete. In the meantime, you might want to go to Step 2 and obtain the OpenAI API keys to save some time! Come back to this step after you generate your OpenAI API key.
   
