@@ -700,5 +700,6 @@ python azure-data-stream.py
 
 
 ## Task for you
-Take a screenshot of your Azure IoT Explorer Telemetry demonstrating that you have sent distance data from your ultrasonic sensor to the Azure server via your Raspberry Pi. 
-Select one of your sensors for your final project. In addition to changing the Raspberry Pi python script to send a string with your team number to Azure, you should also send a reading from your sensor. Take a screenshot of your Azure IoT Explorer Telemetry. 
+1. Take a screenshot of your Azure IoT Explorer Telemetry demonstrating that you have sent distance data from your ultrasonic sensor to the Azure server via your Raspberry Pi. 
+
+2. Select one of your sensors for your final project. In addition to changing the Raspberry Pi python script to send a string with your team number to Azure, you should also send a reading from your sensor. Take a screenshot of your Azure IoT Explorer Telemetry. 
