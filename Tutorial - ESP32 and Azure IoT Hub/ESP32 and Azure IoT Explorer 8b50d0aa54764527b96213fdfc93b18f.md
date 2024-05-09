@@ -25,7 +25,7 @@ Materials Required
 
 ## Getting Started with Azure IoT Hub
 
-Log in to Azure, click on *IoT Hub*
+Log in to your [Azure Portal](https://portal.azure.com/), click on *IoT Hub*
 
 ![Untitled](ESP32%20and%20Azure%20IoT%20Explorer%208b50d0aa54764527b96213fdfc93b18f/Untitled%202.png)
 
@@ -33,7 +33,7 @@ Create IoT hub
 
 ![Untitled](ESP32%20and%20Azure%20IoT%20Explorer%208b50d0aa54764527b96213fdfc93b18f/Untitled%203.png)
 
-Select the subscription affiliated with your UW account. Create a new Resource Name (IoTResourceTechin515). Create a name for your IoT Hub (hwswlab2). Select Free Tier, then Next: Networking. 
+Select the subscription affiliated with your UW account. Create a new Resource Name (eg. “IoTResourceTechin515”). Create a name for your IoT Hub (eg. “hwswlab2”). Select Free Tier, then Next: Networking. 
 
 ![Untitled](ESP32%20and%20Azure%20IoT%20Explorer%208b50d0aa54764527b96213fdfc93b18f/Untitled%204.png)
 
@@ -184,7 +184,7 @@ void loop()
 }
 ```
 
-Lastly, we need to modify the generateTelemetryPayload() function so that we are sending the distance data in our payload. Our payload will also contain information about how many messages have been sent (*telemetry_send_count++*)
+Lastly, we need to modify the generateTelemetryPayload() function so that we are sending the **distance** data in our payload. Our payload will also contain information about how many messages have been sent (*telemetry_send_count++*). The term “distance” in the payload is very important. You will call on this term later to visualize your sensort data. If you are using a thermometer, for example, you can change this value to “temperature”.
 
 ```cpp
 static void generateTelemetryPayload()
