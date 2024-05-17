@@ -2,6 +2,10 @@
 
 Additional Microsoft resource: [Tutorial - IoT data visualization with Power BI - Azure IoT Hub | Microsoft Learn](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi)
 
+## Prerequisites
+
+In order to complete this exercise, you must first stream sensor data to Azure IoT Hub.  To stream ultrasonic sensor data to Azure IoT Hub from an ESP32 follow this [tutorial](https://github.com/GIXLabs/TECHIN515_Sp24/tree/main/Tutorial%20-%20ESP32%20and%20Azure%20IoT%20Hub).  To stream ultrasonic sensor data to Azure IoT Hub from a Raspberry Pi follow this [lab](https://github.com/GIXLabs/TECHIN515_Sp24/tree/main/Lab3_CloudIntro). 
+
 ## Overview
 
 At the end of this tutorial, you’ll be able to generate a web URL to a visualization of your sensor data as well as generate html code for a graphic which you can paste into your own web application. 
@@ -63,7 +67,7 @@ In the **Basics** tab of the **New Stream Analytics job** page, enter the fo
 | Name | Enter the name of the job. The name must be globally unique. |
 | Region | Select the region where your IoT hub is located. |
 
-Leave all other fields at their defaults.
+You can change the streaming unit details to the value ‘1’ so that you don’t rapidly use up your Azure credits. Leave all other fields at their defaults.
 
 ![Untitled](Tutorial%20-%20Visualize%20real-time%20sensor%20data%20from%20Az%204c10c0a06d1a43e28d9f2d2ca44b24fe/Untitled%2010.png)
 
@@ -141,10 +145,19 @@ Next, we’ll return to our Azure Portal. Our goal in this step is to select whi
 
 1. In the query editor, replace `[YourOutputAlias]` with the output alias of the job. In this example, we named our OutputAlias “PowerBIVisualizationOutput”. See step D above.
 2. Replace `[YourInputAlias]` with the input alias of the job. In this example, we named our OutputAlias “PowerBIVisualizationInput”. See step C above.
-3. Add the following `WHERE` clause as the last line of the query. This line ensures that only messages with a **distance** property will be forwarded to Power BI. 
+3. Add the following `WHERE` clause as the last line of the query. This line ensures that only messages with a **distance** property will be forwarded to Power BI. You can also add other filters to your SQL query in order to filter out errant sensor readings (eg. unreasonably high or low readings). 
 
 ```sql
+SELECT
+    *
+INTO
+    PowerBIVisualizationOutput
+FROM
+    PowerBIVisualizationInput
+
 WHERE distance IS NOT NULL
+AND distance < 100
+AND distance > 1
 ```
 
 The value “distance” is defined in the generateTelemetryPayload() function in your Arduino code (see below). 
@@ -203,3 +216,9 @@ The following steps show you how to create and publish a report using the Power 
 1. Open a web browser and paste the link into the address bar to view your report in the browser.
 
 For additional resources on how to visualize streaming data, visit this [website](https://learn.microsoft.com/en-us/power-bi/connect-data/service-real-time-streaming).
+
+## G. Stopping the Stream Analytics Job
+
+When you are done with the exercise, it’s good practice to stop the Stream Analytics job (PowerBiVisualizationJob) so that you don’t use your Azure credits. To stop the job, navigate to the [home page](https://portal.azure.com/) of your Azure portal, then  and click on Stop job. When the job has ended, you won’t be charged any further credits for this exercise. 
+
+![Untitled](Tutorial%20-%20Visualize%20real-time%20sensor%20data%20from%20Az%204c10c0a06d1a43e28d9f2d2ca44b24fe/Untitled%2025.png)
